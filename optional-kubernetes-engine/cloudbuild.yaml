@@ -1,12 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-f', 'Dockerfile', '--tag=gcr.io/enterprisedemos-258322/bookshelf', '.']
-  dir:  'optional-kubernetes-engine'
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/enterprisedemos-248322/bookshelf"]
-  dir:  'optional-kubernetes-engine'
 - name: 'gcr.io/cloud-builders/gke-deploy'
-  dir:  'optional-kubernetes-engine'
   args:
   - run
   - filename='bookshelf-frontend.yaml'
