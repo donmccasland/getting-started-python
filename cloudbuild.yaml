@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-f', 'optional-kubernetes-engine/Dockerfile', '--tag=gcr.io/enterprisedemos-258322/bookshelf:latest', '.']
+  args: ['build', '-f', 'optional-kubernetes-engine/Dockerfile', '--tag=gcr.io/enterprisedemos-258322/bookshelf', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/enterprisedemos-248322/bookshelf"]
 - name: 'gcr.io/cloud-builders/gke-deploy'
